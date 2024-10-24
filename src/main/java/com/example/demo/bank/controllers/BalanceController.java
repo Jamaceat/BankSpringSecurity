@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BalanceController {
 
 
-    @GetMapping("/")
+    @GetMapping("")
     public String getBalance() {
         return "Here is the information about the balance";
     }
