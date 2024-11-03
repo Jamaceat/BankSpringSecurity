@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.bank.model.Customer;
-import com.example.demo.bank.repository.CustomerRespository;
+import com.example.demo.bank.repository.CustomerRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class BankUserDetailsService implements UserDetailsService{
 
-private final CustomerRespository customerRespository;
+private final CustomerRepository customerRespository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

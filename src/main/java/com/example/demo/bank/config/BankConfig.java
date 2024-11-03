@@ -13,7 +13,7 @@ public class BankConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((authz) -> authz
-                .requestMatchers("/notices/**", "/login", "/error","/h2-console/**").permitAll()
+                .requestMatchers("/notices/**", "/login", "/error","/h2-console/**","/user/register").permitAll()
                 .anyRequest().authenticated())
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
