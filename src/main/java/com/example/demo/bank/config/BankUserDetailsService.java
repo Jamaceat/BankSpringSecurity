@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.bank.model.Customer;
@@ -17,7 +18,7 @@ import com.example.demo.bank.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 
 
-@Service
+@Component
 @RequiredArgsConstructor
 public class BankUserDetailsService implements UserDetailsService{
 
