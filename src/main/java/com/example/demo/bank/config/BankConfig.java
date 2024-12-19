@@ -18,13 +18,13 @@ public class BankConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((authz) -> authz
-                .requestMatchers("/notices/**", "/login", "/error","/h2-console/**","/user/register").permitAll()
+                .requestMatchers("/notices/**", "/login", "/error","/h2-console/**","/user/**").permitAll()
                 .anyRequest().authenticated())
                 .sessionManagement((sessionManagementConfigurer) ->sessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .httpBasic(Customizer.withDefaults())
+                //.formLogin(Customizer.withDefaults())
                 .addFilterAfter(new JWTTokenGeneratorFilter(), BasicAuthenticationFilter.class)
                 .addFilterBefore(new JWTTokenValidatorFilter(), BasicAuthenticationFilter.class)
-                .formLogin(Customizer.withDefaults())
-                .httpBasic(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable()); // Deshabilitado para acceder a la consola h2
         return http.build();
     }

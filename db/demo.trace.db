@@ -809,3 +809,6 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /home/user/secur
 	... 64 more
 2024-11-03 14:47:07.051260Z jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-12-18 22:46:18.392507-05:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]

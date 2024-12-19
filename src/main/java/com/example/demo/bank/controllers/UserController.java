@@ -1,18 +1,16 @@
 package com.example.demo.bank.controllers;
 
+import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.bank.model.Customer;
 import com.example.demo.bank.repository.CustomerRepository;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
@@ -37,6 +35,12 @@ public class UserController {
 
         return new ResponseEntity<String>("User not created",HttpStatus.BAD_REQUEST);
     }
+
+    @GetMapping("")
+    public ResponseEntity<String> loginUser(){
+        return new ResponseEntity<>("login succesful",HttpStatus.ACCEPTED);
+    }
+
     
     
 }

@@ -46,15 +46,19 @@ public class JWTTokenValidatorFilter extends OncePerRequestFilter {
 
                     }
                 }
+
+                filterChain.doFilter(request,response);
+
             } catch (Exception e) {
                 throw new BadCredentialsException("Invalid token received");
             }
+
         }
     }
     
         
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-		return request.getServletPath().equals("/user");
+		return request.getServletPath().equals("/user/register") || request.getServletPath().equals("/user");
 	}
 }
